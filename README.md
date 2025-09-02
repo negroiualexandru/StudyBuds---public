@@ -7,7 +7,8 @@ StudyBuds is a centralized platform for college freshmen to find classmates and 
 - **Study Groups Screen:** Provides a comprehensive, organized list of all available study groups, including class name, location, number of people, and a brief description.  
 - **Join and Create Groups:** Users can easily join any group from the list with a single click, or create their own customized study groups.
 
-I can create a new study group in the famous **Suzzallo Library**, state the class and exam the group is studying for and add it to the list. Now other students on this app can actually log on and see where their classmates are studying to possibly join them if there is room.
+**Example**:
+I can create a new study group in the famous Suzzallo Library, state the class and exam the group is studying for and add it to the list. Now other students on this app can actually log on and see where their classmates are studying to possibly join them if there is room.
 
 ---
 
