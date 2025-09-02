@@ -1,0 +1,335 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="HardcodedText,UselessParent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/uwPurple">
+
+    <!--Navigation Container-->
+    <LinearLayout
+        android:id="@+id/navigationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/uwPurple"
+        android:padding="3dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp">
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="125dp"
+                android:layout_height="80dp"
+                android:contentDescription="Home Button"
+                android:src="@drawable/home_button_foreground"
+                android:background="@drawable/oval_light_purple"
+                android:padding="11dp"
+                android:scaleX="0.75"
+                android:scaleY="0.75" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp">
+            <ImageButton
+                android:id="@+id/mapButton"
+                android:layout_width="125dp"
+                android:layout_height="80dp"
+                android:contentDescription="Map Button"
+                android:src="@drawable/map_button_foreground"
+                android:background="@drawable/oval_dark_purple"
+                android:padding="11dp"
+                android:scaleX="0.75"
+                android:scaleY="0.75"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Map"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp">
+            <ImageButton
+                android:id="@+id/classesButton"
+                android:layout_width="125dp"
+                android:layout_height="80dp"
+                android:contentDescription="Classes Button"
+                android:src="@drawable/book_button_foreground"
+                android:background="@drawable/oval_dark_purple"
+                android:padding="11dp"
+                android:scaleX="0.75"
+                android:scaleY="0.75"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Study Groups"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="-10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Home Page-->
+    <ScrollView
+        android:id="@+id/homePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/offWhite"
+        android:layout_above="@id/navigationContainer"
+        android:visibility="visible"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/uwPurple"
+                android:gravity="center"
+                android:padding="11dp"
+                android:text="StudyBuds"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to StudyBuds!"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_rectangle_light_purple" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Logo"
+                android:src="@drawable/logo"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:layout_gravity="center"
+                android:background="@drawable/logo_background"
+                />
+
+            <TextView
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/rounded_rectangle_light_purple"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:text="@string/home_page_desc"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Map Page-->
+    <ScrollView
+        android:id="@+id/mapPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/navigationContainer"
+        android:layout_marginBottom="0dp"
+        android:background="@color/offWhite"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/uwPurple"
+                android:gravity="center"
+                android:padding="11dp"
+                android:text="Map"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="560dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/navigationContainer" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--Classes Page-->
+    <ScrollView
+        android:id="@+id/classesPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/offWhite"
+        android:layout_above="@id/navigationContainer"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/offWhite"
+            android:id="@+id/classesContainer">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:background="@color/uwPurple">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/uwPurple"
+                    android:gravity="center"
+                    android:padding="11dp"
+                    android:text="Study Groups"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:paddingEnd="60sp"
+                    android:paddingStart="100sp"
+                    android:layout_marginRight="-25dp"/>
+
+                <Button
+                    android:id="@+id/newSessionButton"
+                    android:layout_width="74dp"
+                    android:layout_height="40dp"
+                    android:text="Add"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/logoBackgroundColor"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Add a Session Information-->
+    <ScrollView
+        tools:ignore="Autofill"
+        android:id="@+id/addSessionPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/offWhite"
+        android:layout_above="@id/navigationContainer"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/uwPurple"
+                android:gravity="center"
+                android:padding="11dp"
+                android:text="Create a Study Group"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="11dp"
+                android:text="Enter Information:"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/classNameEntry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Class Name"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="40dp"
+                android:inputType="text"
+                android:gravity="center"/>
+
+            <Spinner
+                android:id="@+id/locationSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="30dp"
+                android:padding="10dp"
+                android:entries="@array/locations"
+                />
+
+            <EditText
+                android:id="@+id/numberOfPeople"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Amount of People"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="30dp"
+                android:inputType="number"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/typeOfStudy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="What are you studying for?"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="30dp"
+                android:inputType="text"
+                android:gravity="center"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/inputInformationButton"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="Submit Information"
+                android:backgroundTint="@color/uwPurple"
+                android:padding="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
